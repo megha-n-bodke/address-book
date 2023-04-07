@@ -7,14 +7,12 @@ const HomePage = () => {
     name: "",
     phone: "",
   });
-
   useEffect(() => {
     const storedFormDataArray = localStorage.getItem("formDataArray");
     if (storedFormDataArray) {
       setFormDataArray(JSON.parse(storedFormDataArray));
     }
   }, []);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevFormData) => ({
@@ -33,7 +31,7 @@ const HomePage = () => {
   };
   return (
     <section>
-      <div className="container">
+      <div className="container bg bg-secondary">
         <div className="row">
           <h3>Create Contact</h3>
           <form onSubmit={handleSubmit}>
